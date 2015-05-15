@@ -18,4 +18,5 @@ LOG_TITLE="build"
 # build
 log "building site" 0
 jekyll build
+mv _site _out
 
