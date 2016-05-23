@@ -8,7 +8,7 @@ set -e
 
 
 # we require utilities
-source .travis/utils.sh
+source "${DATA_DIR}/utils.sh"
 
 
 # script variables
@@ -18,4 +18,3 @@ LOG_TITLE="deps"
 log "installing jekyll" 0
 gem install jekyll
 jekyll --version
-

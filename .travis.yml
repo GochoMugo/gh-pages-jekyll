@@ -1,9 +1,0 @@
-language: ruby
-rvm:
-- 2.1
-install: .travis/deps.sh
-script: .travis/build.sh
-after_success: .travis/deploy.sh
-env:
-  global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true

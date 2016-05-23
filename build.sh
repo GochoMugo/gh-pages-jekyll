@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #
 # Building the Website using Jekyll
 #
@@ -8,7 +9,7 @@ set -e
 
 
 # we require utilities
-source .travis/utils.sh
+source "${DATA_DIR}/utils.sh"
 
 
 # script variables
@@ -17,6 +18,7 @@ LOG_TITLE="build"
 
 # build
 log "building site" 0
-jekyll build
-mv _site _out
-
+BUILD_NUMBER=${TRAVIS_BUILD_NUMBER} \
+BUILD_HASH=$(git rev-parse HEAD) \
+    jekyll build \
+        --destination "${OUT_DIR}"
